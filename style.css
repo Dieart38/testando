@@ -1,0 +1,232 @@
+/*Isso garante que o preenchimento e a borda sejam incluidos na largura e altura dos elementos.*/
+* {
+    box-sizing: border-box;
+}
+
+/*As colunas dentro de uma linha estão todas flutuando a esquerda e, portanto, são retiradas do fluxo da página, e outros elementos serão colocados como se as colunas não existissem. Para evitar isso, adicionaremos um estilo que limpa o fluxo*/
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/*Todas essas colunas devem estar flutuando a esquerda e ter um preenchimento de 15px */
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+h1 {
+    
+    text-align: center;
+}
+
+html {
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+body{
+    
+    background-color: rgb(229, 250, 240);
+}
+
+a{
+    
+    text-decoration: none;
+    color: #fff;
+}
+a:hover{
+    color: #cb105e;
+}
+
+.format li{
+    width: 50%;
+    text-align: left;
+    margin: auto;
+    margin-bottom: 20px;
+    
+}
+.custom-line {
+    border: 1px solid #000;
+    width: 50%;
+    margin: 10px;
+    
+    
+}
+
+.header {
+    background-image: url(img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 15px;
+
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza horizontalmente */
+
+
+}
+
+
+
+.menu ul {
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+    height: 60px;
+    align-items: center;
+    list-style-type: none;
+    /* remove o tipo da marcação ao lado dos itens da lista*/
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    padding: 8px;
+    margin-bottom: 7px;
+    border-radius: 15px;
+    background-image: url(img/bg.jpg);
+    background-position: center;
+    background-color: #33b5e5;
+    color: #fff;
+
+
+}
+
+
+
+.aside {
+    display: block;
+    position: absolute;
+    top: 180px;
+    /* Ajuste conforme a altura do header */
+    right: 2%;
+    border-radius: 40px;
+    background-image: url(img/foto.png);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-position: top;
+    padding: 15px;
+    color: #fff;
+    width: 240px;
+    height: 260px;
+    filter: contrast(140%);
+
+}
+
+.footer {
+    bottom: 0px;
+    left: 10px;
+    right: 10px;
+    background-image: url(img/bg.jpg);
+    background-position: center;
+    background-color: #0099cc;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+}
+
+/*adaptação para telas menores ou janelas menores*/
+
+/* For desktop: */
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    /*For mobile*/
+    [class*="col-"] {
+        width: 100%;
+        max-width: none;
+        /* Remove o limite máximo */
+    }
+
+    .menu-container {
+
+        flex-direction: row;
+        /* Muda para linha em telas menores */
+        flex-wrap: wrap;
+        /* Permite quebra de linha se necessário */
+        justify-content: center;
+
+    }
+
+
+    .menu ul {
+        display: block;
+        width: 30%;
+        padding: 2px;
+        margin-bottom: 70px;
+
+    }
+
+    .menu li {
+
+        margin-bottom: 8;
+
+    }
+    .aside{
+        right: 4%;
+        width: 30%;
+    }
+    h1{
+        text-align: left;
+    }
+    .custom-line{
+        width: 80%;
+        align-items: center;
+    }
+}
